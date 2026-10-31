@@ -971,6 +971,7 @@ export default function App() {
           <div className="topbar-actions">
             <button
               className="search-trigger"
+              aria-label="빠른 검색 열기"
               onClick={() => {
                 setSearchOpen(true);
                 setSearch("");

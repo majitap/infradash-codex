@@ -4895,3 +4895,24 @@ main:focus {
   width: 4px;
   height: 4px;
 }
+@media (max-width: 800px) {
+  .sidebar {
+    visibility: hidden;
+  }
+  .sidebar.is-open {
+    visibility: visible;
+  }
+  .mobile-menu {
+    width: 36px;
+    height: 36px;
+  }
+  .topbar-actions .icon-button {
+    width: 36px;
+    height: 36px;
+  }
+  .search-trigger {
+    min-width: 36px;
+    min-height: 36px;
+    justify-content: center;
+  }
+}
