@@ -62,7 +62,10 @@ export default function ExecutionChart({ env }) {
                 </span>
               </span>
               <span className="bar-date">
-                {days === 7 || i % 2 === 0 || i === data.length - 1
+                {days === 7 ||
+                i === 0 ||
+                i === data.length - 1 ||
+                (i % 3 === 0 && i < data.length - 3)
                   ? d.date
                   : "\u00a0"}
               </span>
