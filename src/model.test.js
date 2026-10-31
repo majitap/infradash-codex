@@ -31,6 +31,7 @@ test("time ranges and environments change chart data", () => {
   assert.equal(seriesFor(7).length, 7);
   assert.equal(seriesFor(30).at(-1).date, "10/31");
   assert.ok(seriesFor(7, "production")[0].success < seriesFor(7)[0].success);
+  assert.deepEqual(seriesFor(7), seriesFor(14).slice(-7));
 });
 test("CSV escapes delimiters, quotes and spreadsheet formulas", () => {
   const output = csv([{ name: "=cmd", title: 'a,"b"\nc' }], ["name", "title"]);

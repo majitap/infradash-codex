@@ -104,15 +104,15 @@ const seeds = [
 export function seriesFor(days, env = "all") {
   const factor = env === "production" ? 0.72 : env === "staging" ? 0.28 : 1;
   return seeds
-    .slice(-days)
     .map((n, i) => ({
-      date: `10/${32 - Math.min(days, 30) + i}`,
+      date: `10/${i + 2}`,
       success: Math.round(n * factor),
       failed: Math.max(
         1,
         Math.round((i % 5 === 0 ? 12 : i % 3 === 0 ? 8 : 4) * factor),
       ),
-    }));
+    }))
+    .slice(-days);
 }
 export const initialPipelines = Array.from({ length: 30 }, (_, i) => {
   const project = projects[i % projects.length];
